@@ -1,1 +1,242 @@
-/* No CSS *//*# sourceMappingURL=style-main.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+html {
+  font-size: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito Sans";
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex-jc-c {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flex-jc-sb {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.flex-ai-c {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flex-ai-fs {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.flex-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container {
+  margin-top: -1px;
+  padding: 45px 80px;
+  height: 100%;
+  min-height: 100vh;
+  background-color: #fafafa;
+}
+
+.container-dark {
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  background-color: #202c37;
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    padding: 35px 70px;
+  }
+}
+
+.header {
+  padding: 30px 80px;
+  background-color: white;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.header-dark {
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  background-color: #2b3945;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  color: white;
+}
+
+.header img {
+  height: 18px;
+  margin-right: 10px;
+}
+
+.header h3 {
+  font-weight: 600;
+}
+
+@media screen and (max-width: 500px) {
+  .header {
+    padding: 45px 20px;
+  }
+  .header h1 {
+    font-size: 16px;
+  }
+  .header h3 {
+    font-size: 16px;
+  }
+}
+
+.search-bar {
+  font-size: 16px;
+  margin-bottom: 50px;
+  width: 37vw;
+  padding: 20px 32px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.search-bar__dark {
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  color: white;
+  background-color: #2b3945;
+}
+
+.search-bar__dark::-webkit-input-placeholder {
+  color: white;
+}
+
+.search-bar__dark:-ms-input-placeholder {
+  color: white;
+}
+
+.search-bar__dark::-ms-input-placeholder {
+  color: white;
+}
+
+.search-bar__dark::placeholder {
+  color: white;
+}
+
+.data {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -webkit-column-gap: 75px;
+          column-gap: 75px;
+  row-gap: 75px;
+}
+
+.data .box {
+  height: 100%;
+  background-color: white;
+  border-radius: 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.data .box__dark {
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  background-color: #2b3945;
+  color: white;
+}
+
+.data .box__img {
+  width: 100%;
+  height: 160px;
+  max-height: 200px;
+  border-radius: 5px 5px 0 0;
+}
+
+.data .box__title {
+  text-align: left;
+  font-size: 17px;
+  font-weight: 800;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.data .box__text {
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  float: left;
+}
+
+.data .box__text:last-child {
+  margin-bottom: 45px;
+}
+
+.data .box__text p {
+  font-weight: 300;
+  float: right;
+  margin-left: 5px;
+}
+
+.data .box__data {
+  padding: 0 25px;
+}
+
+.box :hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1250px) {
+  .data {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .data {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .search-bar {
+    width: 64vw;
+  }
+  .data {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+/*# sourceMappingURL=style-main.css.map */

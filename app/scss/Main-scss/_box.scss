@@ -1,0 +1,111 @@
+.search-bar {
+  &__dark {
+    transition: all 200ms ease-in-out;
+    color: $white;
+    background-color: $darkBlue;
+
+    &::placeholder {
+      color: $white;
+    }
+  }
+
+  font-size: 16px;
+
+  margin-bottom: 50px;
+  width: 37vw;
+  padding: 20px 32px;
+
+  border-radius: 5px;
+  border: none;
+
+  outline: none;
+
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.data {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 75px;
+  row-gap: 75px;
+
+  .box {
+    &__dark {
+      transition: all 200ms ease-in-out;
+      background-color: $darkBlue;
+      color: $white;
+    }
+
+    height: 100%;
+    background-color: $white;
+
+    border-radius: 5px;
+
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    &__img {
+      width: 100%;
+      height: 160px;
+
+      max-height: 200px;
+
+      border-radius: 5px 5px 0 0;
+    }
+
+    &__title {
+      text-align: left;
+      font-size: 17px;
+      font-weight: 800;
+
+      margin-top: 25px;
+      margin-bottom: 25px;
+    }
+
+    &__text {
+      &:last-child {
+        margin-bottom: 45px;
+      }
+      margin-bottom: 12px;
+
+      font-size: 16px;
+      font-weight: 600;
+      float: left;
+
+      p {
+        font-weight: 300;
+        float: right;
+
+        margin-left: 5px;
+      }
+    }
+
+    &__data {
+      padding: 0 25px;
+    }
+  }
+}
+
+.box :hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1250px) {
+  .data {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .data {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .search-bar {
+    width: 64vw;
+  }
+  .data {
+    grid-template-columns: 1fr;
+  }
+}
