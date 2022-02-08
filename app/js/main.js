@@ -1,3 +1,4 @@
+// Calling data from html
 const color_mode = document.querySelector(".mode_btn");
 const header = document.querySelector(".header");
 const container = document.querySelector(".container");
@@ -5,8 +6,14 @@ const dataTab = document.querySelector(".data");
 const modeText = document.querySelector(".mode-text");
 const modeIcon = document.querySelector(".mode-icon");
 const searchBar = document.querySelector(".search-bar");
+const waitText = document.getElementById("waitText");
+const regionSelector = document.querySelector(".selector");
+const selectorArrow = document.querySelector(".selector__arrow");
+const selectorRegion = document.querySelector(".selector__region");
+const regionText = document.querySelector(".selector__text");
 
-let apiUrl = "https://restcountries.com/v3.1/all";
+// Variables
+const apiUrl = "https://restcountries.com/v3.1/all";
 let data = "";
 let currentMode = "Light Mode";
 
@@ -19,6 +26,27 @@ color_mode.addEventListener("click", () => {
   }
 });
 
+// Region Selector toggle
+regionSelector.addEventListener("click", () => {
+  if (selectorRegion.classList.contains("close")) {
+    selectorArrow.classList.add("selector__arrow-open");
+    selectorRegion.classList.add("selector__region-open");
+
+    selectorRegion.classList.add("open");
+    selectorRegion.classList.remove("close");
+  } else {
+    selectorArrow.classList.remove("selector__arrow-open");
+    selectorRegion.classList.remove("selector__region-open");
+
+    selectorRegion.classList.remove("open");
+    selectorRegion.classList.add("close");
+  }
+});
+
+function selection(selection) {
+  const selectedCoutry = selection.querySelector(".box__title").innerHTML;
+}
+
 // Set Dark Mode
 const darkMode = () => {
   header.classList.add("header-dark");
@@ -30,8 +58,14 @@ const darkMode = () => {
 
   modeText.innerHTML = "Light Mode";
   modeIcon.src = "../images/13676827261543238933.svg";
+  modeIcon.classList.add("mode-icon__dark");
 
   searchBar.classList.add("search-bar__dark");
+
+  waitText.style.color = "white";
+
+  regionSelector.classList.add("selector__dark");
+  selectorRegion.classList.add("selector__region__dark");
 
   currentMode = "Dark Mode";
 };
@@ -47,11 +81,37 @@ const lightMode = () => {
 
   modeText.innerHTML = "Dark Mode";
   modeIcon.src = "../images/18266103411574330931.svg";
+  modeIcon.classList.remove("mode-icon__dark");
 
   searchBar.classList.remove("search-bar__dark");
 
+  regionSelector.classList.remove("selector__dark");
+  selectorRegion.classList.remove("selector__region__dark");
+
+  waitText.style.color = "black";
+
   currentMode = "Light Mode";
 };
+
+// Filter by selected region
+function filterRegion(selection) {
+  regionText.innerHTML = selection.innerHTML;
+
+  const regionFilter = data.filter((e) => {
+    return e.region.includes(regionText.innerHTML);
+  });
+
+  const sortedRegionFilter = regionFilter.sort((a, b) => {
+    return a.name.official.localeCompare(b.name.official);
+  });
+
+  showData(sortedRegionFilter);
+  if (currentMode == "Dark Mode") {
+    darkMode();
+  } else {
+    lightMode();
+  }
+}
 
 // Search Bar
 searchBar.addEventListener("keyup", (e) => {
@@ -64,21 +124,32 @@ searchBar.addEventListener("keyup", (e) => {
     );
   });
 
-  showData(filterCountries);
-  console.log(filterCountries);
+  const sortedFilterCountries = filterCountries.sort((a, b) => {
+    return a.name.official.localeCompare(b.name.official);
+  });
+
+  showData(sortedFilterCountries);
 
   if (currentMode == "Dark Mode") {
     darkMode();
   } else {
     lightMode();
   }
+
+  regionText.innerHTML = "Filter by Region";
 });
 
 // Get Data From API
 const getData = async () => {
   const res = await fetch(apiUrl);
   data = await res.json();
-  showData(data);
+
+  const sortedData = data.sort((a, b) => {
+    return a.name.official.localeCompare(b.name.official);
+  });
+
+  showData(sortedData);
+
   if (currentMode == "Dark Mode") {
     darkMode();
   } else {
@@ -88,10 +159,11 @@ const getData = async () => {
 
 // Show Data On Page
 const showData = (countries) => {
+  waitText.style.display = "none";
   const htmlString = countries
     .map((countries) => {
       return `
-        <div class="box">
+        <div class="box" onclick="selection(this)" >
             <img src="${countries.flags.png}" class="box__img"></img>
             <div class="box__data flex flex-column flex-ai-fs">
                 <h2 class="box__title">${countries.name.common}</h2>

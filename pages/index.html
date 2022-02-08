@@ -19,12 +19,33 @@
       </div>
     </header>
     <div class="container">
-      <input
-        type="text"
-        class="search-bar"
-        placeholder="Search for a country"
-      />
-      <div class="data"></div>
+      <div class="actionCenter flex flex-jc-sb flex-ai-c">
+        <input
+          type="text"
+          class="search-bar"
+          placeholder="Search for a country"
+        />
+
+        <div class="selector flex flex-jc-sb flex-ai-c">
+          <h3 class="selector__text">Filter by Region</h3>
+          <img
+            src="../images/17864404941556280995.svg"
+            alt="arrow"
+            class="selector__arrow"
+          />
+
+          <div class="selector__region close">
+            <h3 onclick="filterRegion(this)">Africa</h3>
+            <h3 onclick="filterRegion(this)">America</h3>
+            <h3 onclick="filterRegion(this)">Asia</h3>
+            <h3 onclick="filterRegion(this)">Europe</h3>
+            <h3 onclick="filterRegion(this)">Oceania</h3>
+          </div>
+        </div>
+      </div>
+      <div class="data">
+        <h2 id="waitText">Please Wait...</h2>
+      </div>
     </div>
   </body>
   <script src="../app/js/main.js"></script>
