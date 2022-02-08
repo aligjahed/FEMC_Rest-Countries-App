@@ -127,10 +127,23 @@ p {
   margin-bottom: 50px;
 }
 
+.actionCenter .searchbarSection {
+  position: relative;
+}
+
+.actionCenter .searchbarSection img {
+  position: absolute;
+  height: 20px;
+  left: 20px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
 .actionCenter .search-bar {
   font-size: 16px;
   width: 37vw;
-  padding: 20px 32px;
+  padding: 20px 32px 20px 50px;
   border-radius: 5px;
   border: none;
   outline: none;
@@ -359,6 +372,9 @@ p {
 }
 
 @media screen and (max-width: 750px) {
+  .searchbarSection img {
+    top: 28% !important;
+  }
   .data {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;

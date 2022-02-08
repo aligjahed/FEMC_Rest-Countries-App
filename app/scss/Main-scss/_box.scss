@@ -1,6 +1,18 @@
 .actionCenter {
   margin-bottom: 50px;
 
+  .searchbarSection {
+    position: relative;
+
+    img {
+      position: absolute;
+      height: 20px;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
   .search-bar {
     &__dark {
       transition: all 200ms ease-in-out;
@@ -17,7 +29,7 @@
     font-size: 16px;
 
     width: 37vw;
-    padding: 20px 32px;
+    padding: 20px 32px 20px 50px;
 
     border-radius: 5px;
     border: none;
@@ -198,6 +210,12 @@
 }
 
 @media screen and (max-width: 750px) {
+  .searchbarSection {
+    img {
+      top: 28% !important;
+    }
+  }
+
   .data {
     grid-template-columns: 1fr;
   }
