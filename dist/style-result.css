@@ -1,1 +1,340 @@
-/* No CSS *//*# sourceMappingURL=style-result.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+html {
+  font-size: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: visible;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito Sans";
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex-jc-c {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flex-jc-sb {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.flex-ai-c {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flex-ai-fs {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.flex-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container {
+  margin-top: -1px;
+  padding: 45px 80px;
+  height: 100%;
+  min-height: 100vh;
+  background-color: #fafafa;
+}
+
+.container-dark {
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  background-color: #202c37;
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    padding: 35px 70px;
+  }
+}
+
+.header {
+  padding: 30px 80px;
+  background-color: white;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.header-dark {
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  background-color: #2b3945;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  color: white;
+}
+
+.header .mode-icon {
+  height: 18px;
+  margin-right: 10px;
+}
+
+.header .mode-icon__dark {
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1);
+}
+
+.header h3 {
+  font-weight: 600;
+}
+
+@media screen and (max-width: 500px) {
+  .header {
+    padding: 45px 20px;
+  }
+  .header h1 {
+    font-size: 16px;
+  }
+  .header h3 {
+    font-size: 16px;
+  }
+}
+
+.backBtn {
+  width: 135px;
+  background-color: white;
+  padding: 15px 30px;
+  border-radius: 5px;
+  margin-bottom: 80px;
+}
+
+.backBtn-dark {
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  background-color: #2b3945;
+  color: white;
+}
+
+.backBtn-dark img {
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1);
+}
+
+.backBtn img {
+  margin-right: 25px;
+}
+
+.backBtn:hover {
+  cursor: pointer;
+}
+
+.data__img {
+  width: 560px;
+  height: 410px;
+  margin-right: 80px;
+}
+
+.data__text {
+  margin-left: 80px;
+}
+
+.data__text-dark h2 {
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  color: white;
+}
+
+.data__text h2 {
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+
+.text-left {
+  margin-right: 140px;
+}
+
+.text-left h3 {
+  font-size: 16px;
+  float: left;
+  font-weight: 600;
+}
+
+.text-left p {
+  float: left;
+  margin-left: 5px;
+  font-weight: 300;
+}
+
+.text-right h3 {
+  font-size: 16px;
+  float: left;
+  font-weight: 600;
+}
+
+.text-right p {
+  float: left;
+  margin-left: 5px;
+  font-weight: 300;
+}
+
+.text .title-dark h3 {
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  color: white;
+}
+
+.text .title-dark p {
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  color: white;
+}
+
+.text .title:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.border {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  margin-top: 70px;
+}
+
+.border-dark h3 {
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  color: white;
+}
+
+.border h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.border__box {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.border__box-dark p {
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  color: white !important;
+  background-color: #2b3945 !important;
+}
+
+.border__box p {
+  font-size: 16px;
+  padding: 10px 25px;
+  background: white;
+  border-radius: 5px;
+  color: #111517;
+  font-weight: 600;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 1250px) {
+  .container {
+    padding: 75px 55px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .data {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .data__img {
+    height: 460px;
+    width: 100%;
+    margin: 0;
+    width: 100%;
+    max-height: 465px;
+    max-width: 640px;
+  }
+  .data__text {
+    width: 100%;
+    margin-top: 50px;
+    margin-left: 0;
+  }
+  .data__text .text {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .data__text .text-left {
+    margin-bottom: 25px;
+  }
+  .data .title {
+    margin-bottom: 25px;
+  }
+  .data .border {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .data .border__box {
+    text-align: center;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .data__img {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .data__img {
+    height: 200px;
+  }
+}
+
+.border .border__box:hover {
+  cursor: pointer;
+}
+/*# sourceMappingURL=style-result.css.map */

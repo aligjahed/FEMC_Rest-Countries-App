@@ -15,14 +15,26 @@ const regionText = document.querySelector(".selector__text");
 // Variables
 const apiUrl = "https://restcountries.com/v3.1/all";
 let data = "";
-let currentMode = "Light Mode";
+let currentMode = localStorage.getItem("mode");
+
+window.onload = () => {
+  if (currentMode == "Dark Mode") {
+    darkMode();
+  } else {
+    lightMode();
+  }
+};
+
+localStorage.removeItem("req");
 
 // Dark / Light Mode Toggle
 color_mode.addEventListener("click", () => {
   if (modeText.innerHTML == "Dark Mode") {
     darkMode();
+    localStorage.setItem("mode", "Dark Mode");
   } else {
     lightMode();
+    localStorage.setItem("mode", "Light Mode");
   }
 });
 
@@ -44,7 +56,9 @@ regionSelector.addEventListener("click", () => {
 });
 
 function selection(selection) {
-  const selectedCoutry = selection.querySelector(".box__title").innerHTML;
+  const selectedCountry = selection.querySelector(".box__title").innerHTML;
+  localStorage.setItem("req", selectedCountry);
+  window.location.assign("Result.html");
 }
 
 // Set Dark Mode
@@ -66,6 +80,10 @@ const darkMode = () => {
 
   regionSelector.classList.add("selector__dark");
   selectorRegion.classList.add("selector__region__dark");
+
+  document
+    .querySelector(".searchbarSection")
+    .classList.add("searchbarSection-dark");
 
   currentMode = "Dark Mode";
 };
@@ -89,6 +107,10 @@ const lightMode = () => {
   selectorRegion.classList.remove("selector__region__dark");
 
   waitText.style.color = "black";
+
+  document
+    .querySelector(".searchbarSection")
+    .classList.remove("searchbarSection-dark");
 
   currentMode = "Light Mode";
 };
@@ -143,6 +165,7 @@ searchBar.addEventListener("keyup", (e) => {
 const getData = async () => {
   const res = await fetch(apiUrl);
   data = await res.json();
+  console.log(data);
 
   const sortedData = data.sort((a, b) => {
     return a.name.official.localeCompare(b.name.official);
@@ -176,6 +199,7 @@ const showData = (countries) => {
     })
     .join("");
   dataTab.innerHTML = htmlString;
+  localStorage.removeItem("req");
 };
 
 getData();

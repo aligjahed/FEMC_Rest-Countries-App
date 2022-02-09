@@ -2,6 +2,12 @@
   margin-bottom: 50px;
 
   .searchbarSection {
+    &-dark {
+      img {
+        transition: all 200ms ease-in-out;
+        filter: brightness(0) invert(1);
+      }
+    }
     position: relative;
 
     img {
@@ -125,7 +131,7 @@
 
           to {
             visibility: visible;
-            opacity: 100;
+            opacity: 100%;
           }
         }
 
