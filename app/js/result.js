@@ -78,7 +78,9 @@ const getData = async () => {
   }
 };
 
+// Redirect to selected border page
 async function borderRoute(border) {
+  waitText.style.display = "";
   const borderReq = border.innerHTML;
 
   const res = await fetch(borderUrl + borderReq);
