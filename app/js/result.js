@@ -117,7 +117,7 @@ const darkMode = () => {
   container.classList.add("container-dark");
 
   modeText.innerHTML = "Light Mode";
-  modeIcon.src = "../images/13676827261543238933.svg";
+  modeIcon.src = "./images/13676827261543238933.svg";
   modeIcon.classList.add("mode-icon__dark");
 
   backBtn.classList.add("backBtn-dark");
@@ -138,7 +138,7 @@ const lightMode = () => {
   container.classList.remove("container-dark");
 
   modeText.innerHTML = "Dark Mode";
-  modeIcon.src = "../images/18266103411574330931.svg";
+  modeIcon.src = "./images/18266103411574330931.svg";
   modeIcon.classList.remove("mode-icon__dark");
 
   backBtn.classList.remove("backBtn-dark");
